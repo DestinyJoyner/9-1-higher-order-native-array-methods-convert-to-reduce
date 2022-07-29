@@ -18,10 +18,7 @@ const exampleSongData = require('../data/songs');
  */
 
 function getSongTitles(exampleSongData) {
-  return exampleSongData.reduce((accum, {title}) => {
-    accum.push(title)
-  return accum
-},[])
+  return exampleSongData.reduce((accum, {title}) => [...accum, title],[])
 }
 // or [...accum, title]
 
@@ -39,10 +36,7 @@ function getSongTitles(exampleSongData) {
  */
 
 function getSongDetails(exampleSongData) {
-  return exampleSongData.reduce((accum, {title, artist}) => {
-    accum.push(`${title} by ${artist}`)
-    return accum
-  },[])
+  return exampleSongData.reduce((accum, {title, artist}) => [...accum, `${title} by ${artist}`],[])
 }
 // or [...accum, `${title} by ${artist}` ]
 /***********************************************************************/
